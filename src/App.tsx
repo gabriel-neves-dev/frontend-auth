@@ -1,28 +1,19 @@
-// import { useState } from "react";
-import "./styles/App.css";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
-  // const [count, setCount] = useState(0);
 
   return (
     <>
-      <div className="App">
+     <BrowserRouter>
+     <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
 
-        <div className="login-card">
-          <div className="login-card-image">
-            <div className="image-placeholder">Imagem</div>
-          </div>
-          <div className="login-card-form">
-            <form>
-              <h2>Login</h2>
-              <input type="text" placeholder="Usuário" />
-              <input type="password" placeholder="Senha" />
-              <button type="submit">Entrar</button>
-            </form>
-          </div>
-        </div>
-
-      </div>
+     </Routes>
+     </BrowserRouter>
     </>
   );
 }

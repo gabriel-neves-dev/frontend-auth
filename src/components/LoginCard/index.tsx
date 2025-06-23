@@ -1,35 +1,48 @@
+import { Link } from "react-router-dom";
 import {
   LoginWrapper,
   LoginCardContainer,
-
   LoginFormContainer,
   LoginForm,
   FormGroup,
   Input,
   Button,
   RememberMe,
+
 } from "./styles";
 
 const LoginCard = () => (
   <LoginWrapper>
     <LoginCardContainer>
-
       <LoginFormContainer>
         <LoginForm>
-          <h2>Login</h2>
+          <h1>Login</h1>
           <FormGroup>
-            <label htmlFor="username">Username</label>
-            <Input type="text" id="username" name="username" required />
+            <Input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="E-mail"
+              required
+            />
           </FormGroup>
           <FormGroup>
-            <label htmlFor="password">Password</label>
-            <Input type="password" id="password" name="password" required />
+            <Input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Senha"
+              required
+            />
           </FormGroup>
           <Button type="submit">Login</Button>
           <RememberMe>
             <input type="checkbox" id="remember" />
             <label htmlFor="remember">Lembrar-me</label>
           </RememberMe>
+          <h4>
+            Não tem uma conta? <Link to="/register">Cadastre-se</Link>
+          </h4>
         </LoginForm>
       </LoginFormContainer>
     </LoginCardContainer>
